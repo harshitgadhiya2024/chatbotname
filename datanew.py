@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify, session, redirect, u
 from flask_cors import CORS
 import json
 import os, requests
-from dotenv import load_dotenv
 import google.generativeai as genai
 
 app = Flask(__name__)
@@ -10,9 +9,7 @@ CORS(app)
 app.config["SECRET_KEY"] = "bhjdbgsjfmbsfjk"
 secure_type = 'http'
 
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key="AIzaSyDcZfwycmbQwUY5XaAJQueDHD7gua_0_qU")
 
 def write_to_file(data, filename):
   """Writes a multiline string to a file.
