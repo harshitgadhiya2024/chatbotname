@@ -52,6 +52,7 @@ def convert_data_minify():
 
     except Exception as e:
         print(e)
+        return {"status": 401, "message": f"error is {e}"}
 
 @app.route('/get_answer', methods=["POST", "GET"])
 def get_answer():
@@ -68,6 +69,7 @@ def get_answer():
 
     except Exception as e:
         print(e)
+        return {"status": 401, "message": f"error is {e}"}
 
 
 if __name__=="__main__":
